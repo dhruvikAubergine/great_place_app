@@ -10,6 +10,7 @@ class AddPlacePage extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: const Text('Add Place'),
+        
       ),
     );
   }
