@@ -13,7 +13,7 @@ Place _$PlaceFromJson(Map<String, dynamic> json) => Place(
       placeLocation: json['placeLocation'] == null
           ? null
           : PlaceLocation.fromJson(
-              json['placeLocation'] as Map<String, dynamic>,),
+              json['placeLocation'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$PlaceToJson(Place instance) => <String, dynamic>{
