@@ -11,17 +11,26 @@ class PlaceProvider with ChangeNotifier {
     return _items;
   }
 
-  void addPlace(String pickedTitle, File pickedImage) {
+  void addPlace(
+    String pickedTitle,
+    File pickedImage,
+    double latitude,
+    double longitude,
+  ) {
     final newPlace = Place(
       title: pickedTitle,
       id: DateTime.now().toString(),
       image: pickedImage.path,
+      latitude: latitude,
+      longitude: longitude,
     );
     _items.add(newPlace);
     DBHelper.insert('user_places', {
       'id': newPlace.id!,
       'title': newPlace.title!,
-      'image': newPlace.image!
+      'image': newPlace.image!,
+      'latitude': latitude,
+      'longitude': longitude
     });
     notifyListeners();
   }
@@ -34,6 +43,8 @@ class PlaceProvider with ChangeNotifier {
             id: item['id'] as String,
             title: item['title'] as String,
             image: item['image'] as String,
+            latitude: item['latitude'] as double,
+            longitude: item['longitude'] as double,
           ),
         )
         .toList();

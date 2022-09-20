@@ -31,18 +31,19 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = ColorScheme.fromSeed(
+      seedColor: const Color.fromARGB(255, 50, 224, 186),
+    );
     return ChangeNotifierProvider.value(
       value: PlaceProvider(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           useMaterial3: true,
-          appBarTheme:
-              const AppBarTheme(color: Color.fromARGB(255, 50, 224, 186)),
-          colorScheme: ColorScheme.fromSwatch(
-            accentColor: const Color.fromARGB(255, 50, 224, 186),
-          ),
-          primaryColor: const Color.fromARGB(255, 50, 224, 186),
+          appBarTheme: AppBarTheme(color: colorScheme.primary),
+          colorScheme: colorScheme,
+          primaryColor: colorScheme.primary,
+          // primaryColor: const Color.fromARGB(255, 50, 224, 186),
         ),
         localizationsDelegates: const [
           AppLocalizations.delegate,

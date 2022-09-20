@@ -46,7 +46,10 @@ class PlaceListPage extends StatelessWidget {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.pushNamed(context, AddPlacePage.routeName),
+        onPressed: () {
+          // DBHelper.deleteTable();
+          Navigator.pushNamed(context, AddPlacePage.routeName);
+        },
         backgroundColor: Theme.of(context).primaryColor,
         child: const Icon(
           Icons.add,

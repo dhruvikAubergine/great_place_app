@@ -19,7 +19,7 @@ class _SelectOnMapState extends State<SelectOnMap> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('User current location'),
+        title: const Text('Select Location'),
         centerTitle: true,
       ),
       body: FlutterMap(
